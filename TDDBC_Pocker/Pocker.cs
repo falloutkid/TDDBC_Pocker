@@ -41,6 +41,11 @@ namespace TDDBC_Pocker
             this.Suit = suit;
             this.Rank = rank;
         }
+
+        public override string ToString()
+        {
+            return "1♦";
+        }
     }
 
     public class Pocker
