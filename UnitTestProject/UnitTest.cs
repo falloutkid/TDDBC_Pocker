@@ -195,6 +195,28 @@ namespace UnitTestProject
             Assert.AreEqual(target.FirstCard, ace_of_diamond);
             Assert.AreEqual(target.SecondCard, king_of_diamond);
         }
+
+        [TestMethod]
+        public void ペアが判定できることT()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card ace_of_club = new Card(SUIT.Club, RANK.Ace);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, ace_of_club);
+
+            Assert.IsTrue(target.isPair());
+        }
+
+        [TestMethod]
+        public void ペアが判定できることF()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card king_of_club = new Card(SUIT.Club, RANK.King);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, king_of_club);
+
+            Assert.IsFalse(target.isPair());
+        }
         #endregion
     }
 }

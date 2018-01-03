@@ -122,6 +122,11 @@ namespace TDDBC_Pocker
         {
             this.FirstCard = first_card;
             this.SecondCard = second_card;
-        }    
+        }
+
+        public bool isPair()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
