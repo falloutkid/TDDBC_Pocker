@@ -126,7 +126,7 @@ namespace TDDBC_Pocker
 
         public bool isPair()
         {
-            throw new NotImplementedException();
+            return FirstCard.hasSameRank(SecondCard);
         }
     }
 }
