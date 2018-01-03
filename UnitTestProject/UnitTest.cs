@@ -37,5 +37,12 @@ namespace UnitTestProject
                 Assert.AreEqual(target.Rank, rank);
             });
         }
+
+        [TestMethod]
+        public void Cardのインスタンスから文字列表記を取得する()
+        {
+            Card target = new Card(SUIT.Diamond, RANK.Ace);
+            Assert.AreEqual(target.ToString(), "1♦");
+        }
     }
 }
