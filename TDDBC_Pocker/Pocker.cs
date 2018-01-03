@@ -36,35 +36,39 @@ namespace TDDBC_Pocker
         public RANK Rank { get; }
         public SUIT Suit { get; }
 
+        private Dictionary<SUIT, string> str_suit_;
+        private Dictionary<RANK, string> str_rank_;
+
         public Card(SUIT suit, RANK rank)
         {
             this.Suit = suit;
             this.Rank = rank;
+
+            str_rank_ = new Dictionary<RANK, string>();
+            str_rank_.Add(RANK.Ace, "A");
+            str_rank_.Add(RANK.King, "K");
+            str_rank_.Add(RANK.Queen, "Q");
+            str_rank_.Add(RANK.Jack, "J");
+
+            for(int i = 2;i <= 10; i++)
+            {
+                str_rank_.Add((RANK)i, i.ToString());
+            }
+
+            str_suit_ = new Dictionary<SUIT, string>();
+            str_suit_.Add(SUIT.Club, "♣");
+            str_suit_.Add(SUIT.Heart, "♥");
+            str_suit_.Add(SUIT.Diamond, "♦");
+            str_suit_.Add(SUIT.Spade, "♠");
         }
+
+        
 
         public override string ToString()
         {
             string result = "";
 
-            switch (this.Rank)
-            {
-                case RANK.Ace:
-                    result += "A";
-                    break;
-                case RANK.Jack:
-                    result += "J";
-                    break;
-                case RANK.Queen:
-                    result += "Q";
-                    break;
-                case RANK.King:
-                    result += "K";
-                    break;
-                default:
-                    var int_rank = (int)this.Rank;
-                    result += int_rank.ToString();
-                    break;
-            }
+            result += str_rank_[this.Rank];
 
             switch (this.Suit)
             {
