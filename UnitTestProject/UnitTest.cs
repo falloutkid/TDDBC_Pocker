@@ -24,12 +24,18 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        [TestCase(SUIT.Diamond, RANK.Ace)]
+        [TestCase(SUIT.Spade, RANK.Jack)]
+        [TestCase(SUIT.Heart, RANK.King)]
+        [TestCase(SUIT.Club, RANK.Seven)]
         public void Cardを定義してインスタンスを作成する()
         {
-            Card target = new Card(SUIT.Diamond, RANK.Ace);
-
-            Assert.AreEqual(target.Suit, SUIT.Diamond);
-            Assert.AreEqual(target.Rank, RANK.Ace);
+            TestContext.Run((SUIT suit, RANK rank) =>
+            {
+                Card target = new Card(suit, rank);
+                Assert.AreEqual(target.Suit, suit);
+                Assert.AreEqual(target.Rank, rank);
+            });
         }
     }
 }
