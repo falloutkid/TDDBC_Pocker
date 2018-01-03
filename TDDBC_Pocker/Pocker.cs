@@ -96,6 +96,11 @@ namespace TDDBC_Pocker
         {
             return this.Suit == compare.Suit;
         }
+
+        public bool hasSameRank(Card king_of_diamond)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Pocker
