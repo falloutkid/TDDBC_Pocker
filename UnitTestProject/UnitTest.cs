@@ -39,10 +39,24 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void Cardのインスタンスから文字列表記を取得する()
+        public void Cardのインスタンスから文字列表記を取得する1()
         {
             Card target = new Card(SUIT.Diamond, RANK.Ace);
-            Assert.AreEqual(target.ToString(), "1♦");
+            Assert.AreEqual(target.ToString(), "A♦");
+        }
+
+        [TestMethod]
+        [TestCase(SUIT.Diamond, RANK.Ace, "A♦")]
+        [TestCase(SUIT.Spade, RANK.Jack, "J♠")]
+        [TestCase(SUIT.Heart, RANK.King, "K♥")]
+        [TestCase(SUIT.Club, RANK.Seven, "7♣")]
+        public void Cardのインスタンスから文字列表記を取得する2()
+        {
+            TestContext.Run((SUIT suit, RANK rank, string expect) =>
+            {
+                Card target = new Card(suit, rank);
+                Assert.AreEqual(target.ToString(), expect);
+            });
         }
     }
 }

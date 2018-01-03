@@ -44,7 +44,45 @@ namespace TDDBC_Pocker
 
         public override string ToString()
         {
-            return "1♦";
+            string result = "";
+
+            switch (this.Rank)
+            {
+                case RANK.Ace:
+                    result += "A";
+                    break;
+                case RANK.Jack:
+                    result += "J";
+                    break;
+                case RANK.Queen:
+                    result += "Q";
+                    break;
+                case RANK.King:
+                    result += "K";
+                    break;
+                default:
+                    var int_rank = (int)this.Rank;
+                    result += int_rank.ToString();
+                    break;
+            }
+
+            switch (this.Suit)
+            {
+                case SUIT.Club:
+                    result += "♣";
+                    break;
+                case SUIT.Heart:
+                    result += "♥";
+                    break;
+                case SUIT.Diamond:
+                    result += "♦";
+                    break;
+                case SUIT.Spade:
+                    result += "♠";
+                    break;
+            }
+
+            return result;
         }
     }
 
