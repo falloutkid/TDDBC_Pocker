@@ -217,6 +217,29 @@ namespace UnitTestProject
 
             Assert.IsFalse(target.isPair());
         }
+
+        [TestMethod]
+        public void フラッシュが判定できることF()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card ace_of_club = new Card(SUIT.Club, RANK.Ace);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, ace_of_club);
+
+            Assert.IsFalse(target.isFlash());
+        }
+
+        [TestMethod]
+        public void フラッシュが判定できることT()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card king_of_diamond = new Card(SUIT.Diamond, RANK.King);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, king_of_diamond);
+
+            Assert.IsTrue(target.isFlash());
+            
+        }
         #endregion
     }
 }

@@ -138,5 +138,10 @@ namespace TDDBC_Pocker
         {
             return FirstCard.hasSameRank(SecondCard);
         }
+
+        public bool isFlash()
+        {
+            return FirstCard.hasSameSuit(SecondCard);
+        }
     }
 }
