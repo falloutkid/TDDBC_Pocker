@@ -92,14 +92,24 @@ namespace TDDBC_Pocker
             return CardNotation.Signleton.str_rank_[this.Rank] + CardNotation.Signleton.str_suit_[this.Suit];
         }
 
+        /// <summary>
+        /// 引き数で指定されたカードと同じスートを持つか
+        /// </summary>
+        /// <param name="compare">比較対象のカード</param>
+        /// <returns>同じスートを保つ場合はTrue、異なる場合はFalse</returns>
         public bool hasSameSuit(Card compare)
         {
             return this.Suit == compare.Suit;
         }
 
-        public bool hasSameRank(Card king_of_diamond)
+        /// <summary>
+        /// 引き数で指定されたカードと同じランクを持つか
+        /// </summary>
+        /// <param name="compare">比較対象のカード</param>
+        /// <returns>同じランクを保つ場合はTrue、異なる場合はFalse</returns>
+        public bool hasSameRank(Card compare)
         {
-            throw new NotImplementedException();
+            return this.Rank == compare.Rank;
         }
     }
 

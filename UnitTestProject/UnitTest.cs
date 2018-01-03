@@ -11,18 +11,6 @@ namespace UnitTestProject
     {
         public TestContext TestContext { set; get; }
 
-        [Ignore]
-        [TestMethod]
-        [TestCase(1,2,3)]
-        public void SampleTestMethod()
-        {
-            TestContext.Run((int x, int y, int z) =>
-            {
-                // Assert.AreEqual(x + y, z);
-                (x + y).Is(z);
-            });
-        }
-
         [TestMethod]
         [TestCase(SUIT.Spade, RANK.Ace)]
         [TestCase(SUIT.Spade, RANK.Two)]
@@ -182,7 +170,6 @@ namespace UnitTestProject
             Assert.IsTrue(ace_of_diamond.hasSameRank(ace_of_club));
         }
 
-        [Ignore]
         [TestMethod]
         public void もう1枚のカードと同じランクを持つかF()
         {
