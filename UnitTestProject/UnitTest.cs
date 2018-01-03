@@ -154,5 +154,24 @@ namespace UnitTestProject
                 Assert.AreEqual(target.ToString(), expect);
             });
         }
+
+        [TestMethod]
+        public void もう1枚のカードと同じスートを持つかT()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card king_of_diamond = new Card(SUIT.Diamond, RANK.King);
+
+            Assert.IsTrue(ace_of_diamond.hasSameSuit(king_of_diamond));
+        }
+
+        [Ignore]
+        [TestMethod]
+        public void もう1枚のカードと同じスートを持つかF()
+        {
+            Card ace_of_club = new Card(SUIT.Club, RANK.Ace);
+            Card king_of_diamond = new Card(SUIT.Diamond, RANK.King);
+
+            Assert.IsFalse(ace_of_club.hasSameSuit(king_of_diamond));
+        }
     }
 }
