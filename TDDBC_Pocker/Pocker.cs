@@ -31,6 +31,18 @@ namespace TDDBC_Pocker
         Diamond
     }
 
+    public class Card
+    {
+        public RANK Rank { get; }
+        public SUIT Suit { get; }
+
+        public Card(SUIT suit, RANK rank)
+        {
+            this.Suit = suit;
+            this.Rank = rank;
+        }
+    }
+
     public class Pocker
     {
     }
