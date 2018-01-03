@@ -113,7 +113,15 @@ namespace TDDBC_Pocker
         }
     }
 
-    public class Pocker
+    public class TwoCardPocker
     {
+        public Card FirstCard { get;}
+        public Card SecondCard { get;}
+
+        public TwoCardPocker(Card first_card, Card second_card)
+        {
+            this.FirstCard = first_card;
+            this.SecondCard = second_card;
+        }    
     }
 }

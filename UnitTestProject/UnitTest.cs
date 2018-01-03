@@ -11,6 +11,7 @@ namespace UnitTestProject
     {
         public TestContext TestContext { set; get; }
 
+        #region 課題1-1
         [TestMethod]
         [TestCase(SUIT.Spade, RANK.Ace)]
         [TestCase(SUIT.Spade, RANK.Two)]
@@ -142,7 +143,9 @@ namespace UnitTestProject
                 Assert.AreEqual(target.ToString(), expect);
             });
         }
+        #endregion
 
+        #region 課題1-2
         [TestMethod]
         public void もう1枚のカードと同じスートを持つかT()
         {
@@ -178,5 +181,20 @@ namespace UnitTestProject
 
             Assert.IsFalse(ace_of_club.hasSameRank(king_of_diamond));
         }
+        #endregion
+
+        #region 課題2-1
+        [TestMethod]
+        public void カードが2枚保持できること()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card king_of_diamond = new Card(SUIT.Diamond, RANK.King);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, king_of_diamond);
+
+            Assert.AreEqual(target.FirstCard, ace_of_diamond);
+            Assert.AreEqual(target.SecondCard, king_of_diamond);
+        }
+        #endregion
     }
 }
