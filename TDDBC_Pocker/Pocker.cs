@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TDDBC_Pocker
 {
-    public enum Rank
+    public enum RANK
     {
         Ace = 1,
         Two,
@@ -23,7 +23,7 @@ namespace TDDBC_Pocker
         King
     }
 
-    public enum Suit
+    public enum SUIT
     {
         Spade,
         Heart,

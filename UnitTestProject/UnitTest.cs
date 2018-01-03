@@ -11,6 +11,7 @@ namespace UnitTestProject
     {
         public TestContext TestContext { set; get; }
 
+        [Ignore]
         [TestMethod]
         [TestCase(1,2,3)]
         public void SampleTestMethod()
@@ -20,6 +21,15 @@ namespace UnitTestProject
                 // Assert.AreEqual(x + y, z);
                 (x + y).Is(z);
             });
+        }
+
+        [TestMethod]
+        public void Cardを定義してインスタンスを作成する()
+        {
+            Card target = new Card(SUIT.Diamond, RANK.Ace);
+
+            Assert.AreEqual(target.Suit, SUIT.Diamond);
+            Assert.AreEqual(target.Rank, RANK.Ace);
         }
     }
 }
