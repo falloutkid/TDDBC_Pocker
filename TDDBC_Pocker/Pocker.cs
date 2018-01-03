@@ -92,9 +92,9 @@ namespace TDDBC_Pocker
             return CardNotation.Signleton.str_rank_[this.Rank] + CardNotation.Signleton.str_suit_[this.Suit];
         }
 
-        public bool hasSameSuit(Card king_of_diamond)
+        public bool hasSameSuit(Card compare)
         {
-            throw new NotImplementedException();
+            return this.Suit == compare.Suit;
         }
     }
 

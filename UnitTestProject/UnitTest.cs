@@ -164,7 +164,6 @@ namespace UnitTestProject
             Assert.IsTrue(ace_of_diamond.hasSameSuit(king_of_diamond));
         }
 
-        [Ignore]
         [TestMethod]
         public void もう1枚のカードと同じスートを持つかF()
         {
