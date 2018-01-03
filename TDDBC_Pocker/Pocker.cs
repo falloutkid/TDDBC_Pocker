@@ -63,30 +63,9 @@ namespace TDDBC_Pocker
         }
 
         
-
         public override string ToString()
         {
-            string result = "";
-
-            result += str_rank_[this.Rank];
-
-            switch (this.Suit)
-            {
-                case SUIT.Club:
-                    result += "♣";
-                    break;
-                case SUIT.Heart:
-                    result += "♥";
-                    break;
-                case SUIT.Diamond:
-                    result += "♦";
-                    break;
-                case SUIT.Spade:
-                    result += "♠";
-                    break;
-            }
-
-            return result;
+            return str_rank_[this.Rank] + str_suit_[this.Suit];
         }
     }
 
