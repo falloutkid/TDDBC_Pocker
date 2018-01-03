@@ -240,6 +240,41 @@ namespace UnitTestProject
             Assert.IsTrue(target.isFlash());
             
         }
+
+        [TestMethod]
+        public void ハイカードが判定できることT()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card seven_of_club = new Card(SUIT.Club, RANK.Seven);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, seven_of_club);
+
+            Assert.IsTrue(target.isHighCard());
+        }
+
+        [TestMethod]
+        public void ハイカードが判定できることF1()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card king_of_diamond = new Card(SUIT.Diamond, RANK.King);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, king_of_diamond);
+
+            Assert.IsFalse(target.isHighCard());
+
+        }
+
+        [TestMethod]
+        public void ハイカードが判定できることF2()
+        {
+            Card ace_of_diamond = new Card(SUIT.Diamond, RANK.Ace);
+            Card ace_of_club = new Card(SUIT.Club, RANK.Ace);
+
+            TwoCardPocker target = new TwoCardPocker(ace_of_diamond, ace_of_club);
+
+            Assert.IsFalse(target.isHighCard());
+
+        }
         #endregion
     }
 }

@@ -143,5 +143,10 @@ namespace TDDBC_Pocker
         {
             return FirstCard.hasSameSuit(SecondCard);
         }
+
+        public bool isHighCard()
+        {
+            return !(isFlash() || isPair());
+        }
     }
 }
