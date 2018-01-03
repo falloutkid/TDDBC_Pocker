@@ -76,6 +76,11 @@ namespace TDDBC_Pocker
         public RANK Rank { get; }
         public SUIT Suit { get; }
 
+        /// <summary>
+        /// デフォルトのコンストラクタを禁止する
+        /// </summary>
+        private Card() { }
+
         public Card(SUIT suit, RANK rank)
         {
             this.Suit = suit;
@@ -117,6 +122,11 @@ namespace TDDBC_Pocker
     {
         public Card FirstCard { get;}
         public Card SecondCard { get;}
+
+        /// <summary>
+        /// デフォルトのコンストラクタを禁止する
+        /// </summary>
+        private TwoCardPocker() { }
 
         public TwoCardPocker(Card first_card, Card second_card)
         {
